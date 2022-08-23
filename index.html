@@ -14,72 +14,52 @@
   </head>
   <body>
     <!-- Navbar -->
-    <nav class="bg-[#212529] flex items-center justify-between flex-wrap px-2">
-      <div class="container mx-auto flex align-center justify-between">
+    <nav class="bg-[#212529] px-2 py-3">
+      <div class="block lg:hidden absolute right-2 top-2">
+        <button
+          onclick="toggleMenu()"
+          class="flex items-center px-3 py-2 border rounded border-[#ffffff1a] text-[#ffffff8c]"
+        >
+          <svg
+            class="fill-current h-3 w-3"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <title>Menu</title>
+            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="container mx-auto flex flex-col md:flex-row align-center justify-between"
+        id="nav"
+      >
         <div class="flex items-center flex-shrink-0 text-white mr-6">
           <span class="text-xl">Tailwind Landing</span>
         </div>
-        <div class="block lg:hidden flex justify-center items-center pt-3 pb-3">
-          <button
-            onclick="toggleMenu()"
-            class="flex items-center px-3 py-2 border rounded border-[#ffffff1a] text-[#ffffff8c]"
-          >
-            <svg
-              class="fill-current h-3 w-3"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <title>Menu</title>
-              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-            </svg>
-          </button>
-        </div>
-        <div class="hidden lg:block" id="desktop-menu">
+        <div class="hidden lg:block" id="menu">
           <a
             href="#responsive-header"
             onclick="toggleMenu()"
-            class="block pt-3 pb-3 lg:inline-block lg:mt-0 text-[#ffffff8c] hover:text-white mr-4"
+            class="block py-3 lg:inline-block lg:mt-0 text-[#ffffff8c] hover:text-white mr-4"
           >
             What You'll Learn
           </a>
           <a
             href="#responsive-header"
             onclick="toggleMenu()"
-            class="block pt-3 pb-3 lg:inline-block lg:mt-0 text-[#ffffff8c] hover:text-white mr-4"
+            class="block py-3 lg:inline-block lg:mt-0 text-[#ffffff8c] hover:text-white mr-4"
           >
             Questions
           </a>
           <a
             href="#responsive-header"
             onclick="toggleMenu()"
-            class="block pt-3 pb-3 lg:inline-block lg:mt-0 text-[#ffffff8c] hover:text-white"
+            class="block py-3 lg:inline-block lg:mt-0 text-[#ffffff8c] hover:text-white"
           >
             Instructors
           </a>
         </div>
-      </div>
-      <div class="hidden" id="mobile-menu">
-        <a
-          href="#responsive-header"
-          onclick="toggleMenu()"
-          class="block pt-3 pb-3 lg:inline-block lg:mt-0 text-[#ffffff8c] hover:text-white mr-4"
-        >
-          What You'll Learn
-        </a>
-        <a
-          href="#responsive-header"
-          onclick="toggleMenu()"
-          class="block pt-3 pb-3 lg:inline-block lg:mt-0 text-[#ffffff8c] hover:text-white mr-4"
-        >
-          Questions
-        </a>
-        <a
-          href="#responsive-header"
-          onclick="toggleMenu()"
-          class="block pt-3 pb-3 lg:inline-block lg:mt-0 text-[#ffffff8c] hover:text-white"
-        >
-          Instructors
-        </a>
       </div>
     </nav>
     <!-- Showcase -->
@@ -120,12 +100,12 @@
       });
     </script>
     <script>
-      var desktopMenu = document.getElementById("desktop-menu");
-      var mobileMenu = document.getElementById("mobile-menu");
+      var nav = document.getElementById("nav");
+      var menu = document.getElementById("menu");
 
       function toggleMenu() {
-        desktopMenu.classList.value = "hidden";
-        mobileMenu.classList.toggle("hidden");
+        nav.classList.add = "flex-col";
+        menu.classList.toggle("hidden");
       }
     </script>
   </body>
